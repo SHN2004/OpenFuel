@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs
+*.log
+
+# OpenFuel - Explicitly TRACK prices.json (The DB)
+# Do not ignore prices.json
+*.bmad/*
+*.bmad
+*.codex
+*.codex/*
+*.gemini
+*.gemini/*
+
+docs/
+
+
+
+
+
+
+
