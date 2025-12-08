@@ -20,14 +20,10 @@ venv/
 
 # OpenFuel - Explicitly TRACK prices.json (The DB)
 # Do not ignore prices.json
-*.bmad/*
-*.bmad
-*.codex
-*.codex/*
-*.gemini
-*.gemini/*
 
-docs/
+
+
+
 
 
 
