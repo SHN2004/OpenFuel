@@ -59,7 +59,21 @@ Guidelines for setting up the project in a local environment.
 ### Prerequisites
 
 - Python 3.11 or higher
-- [uv](https://github.com/astral-sh/uv) (Recommended) or `pip`
+- **uv** (Mandatory for dependency management)
+
+### Installing uv
+
+**macOS / Linux:**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Windows:**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+For other methods, refer to the [official uv documentation](https://github.com/astral-sh/uv).
 
 ### Setup
 
@@ -72,8 +86,6 @@ Guidelines for setting up the project in a local environment.
 2.  **Install dependencies:**
     ```bash
     uv sync
-    # OR
-    # pip install -r requirements.txt
     ```
 
 ### Running the Scraper
