@@ -1,4 +1,4 @@
-# OpenFuel ⛽🇮🇳
+# OpenFuel 🇮🇳
 
 **Serverless, zero-cost, real-time fuel price API for India.**
 
@@ -20,9 +20,8 @@ You can access the latest fuel prices directly via the raw GitHub URL.
 
 **Endpoint:**
 ```
-GET https://raw.githubusercontent.com/hari-7/OpenFuel/main/prices.json
+GET https://raw.githubusercontent.com/SHN2004/OpenFuel/refs/heads/main/prices.json
 ```
-*(Note: Replace `hari-7` with the actual owner username if different)*
 
 **Response Schema:**
 ```json
