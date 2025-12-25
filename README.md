@@ -27,19 +27,17 @@ GET https://raw.githubusercontent.com/SHN2004/OpenFuel/main/prices.json
 **Response Schema:**
 ```json
 {
-  "meta": {
-    "source": "GoodReturns",
-    "currency": "INR",
-    "last_updated_ist": "2025-12-06T06:30:00+05:30",
-    "version": "1.0"
-  },
-  "data": [
+  "last_updated_ist": "2025-12-25T12:34:57.438675+05:30",
+  "petrol": [
     {
-      "state": "Karnataka",
-      "city": "Bengaluru",
-      "aliases": ["Bangalore"],
-      "petrol_price": 101.23,
-      "diesel_price": 87.10
+      "city": "New Delhi",
+      "price": 94.77
+    }
+  ],
+  "diesel": [
+    {
+      "city": "New Delhi",
+      "price": 87.67
     }
   ]
 }
