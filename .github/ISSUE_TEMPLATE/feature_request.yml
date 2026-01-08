@@ -1,0 +1,74 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement! Check the [ROADMAP.md](https://github.com/SHN2004/OpenFuel/blob/main/ROADMAP.md) first to see if this is already planned.
+
+  - type: dropdown
+    id: feature_area
+    attributes:
+      label: Feature Area
+      description: What part of OpenFuel does this relate to?
+      options:
+        - API endpoints/structure
+        - Data format/schema
+        - New fuel type support
+        - Historical data/trends
+        - Documentation
+        - Developer experience
+        - Client libraries/SDKs
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve? Why do you need it?
+      placeholder: |
+        As a developer building a fuel price app, I need to get prices for a specific city
+        without downloading the entire dataset...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How do you think this should work?
+      placeholder: |
+        Add per-city endpoints like /v1/cities/mumbai.json that return only that city's prices
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any other approaches you've thought about?
+      placeholder: |
+        Could also filter client-side, but that wastes bandwidth for mobile users
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this to you?
+      options:
+        - Nice to have
+        - Would significantly improve my use case
+        - Blocking my use case
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to help implement this feature
+          required: false

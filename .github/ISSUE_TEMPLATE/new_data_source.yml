@@ -1,0 +1,103 @@
+name: New Data Source
+description: Propose a new website to scrape fuel prices from
+title: "[Source]: "
+labels: ["new-source", "phase-1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for finding a potential data source! This is our highest priority right now.
+        Please fill out the details below so we can evaluate the source.
+
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: The website URL where fuel prices are listed
+      placeholder: https://example.com/fuel-prices
+    validations:
+      required: true
+
+  - type: dropdown
+    id: fuel_types
+    attributes:
+      label: Fuel Types Available
+      description: What fuel prices does this source provide?
+      multiple: true
+      options:
+        - Petrol
+        - Diesel
+        - CNG
+        - LPG
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: city_count
+    attributes:
+      label: Approximate City Count
+      description: How many cities/locations does this source cover?
+      placeholder: "150+ cities"
+    validations:
+      required: true
+
+  - type: textarea
+    id: cities_covered
+    attributes:
+      label: Sample Cities
+      description: List some cities this source covers (especially ones we don't have yet)
+      placeholder: |
+        - Jaipur
+        - Lucknow
+        - Kanpur
+        - etc.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: update_frequency
+    attributes:
+      label: Update Frequency
+      description: How often does this source update prices?
+      options:
+        - Daily
+        - Weekly
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: data_format
+    attributes:
+      label: Data Format
+      description: Describe how the data is structured (HTML table, JSON API, etc.)
+      placeholder: |
+        The prices are in an HTML table with columns:
+        - City name
+        - Today's price
+        - Yesterday's price
+    validations:
+      required: true
+
+  - type: textarea
+    id: sample_data
+    attributes:
+      label: Sample Data
+      description: Copy-paste a few rows of sample data from the source
+      placeholder: |
+        City        | Petrol  | Diesel
+        Jaipur      | 104.23  | 92.15
+        Lucknow     | 103.89  | 91.87
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I have verified this source is publicly accessible
+          required: true
+        - label: I have checked this source is not already used by OpenFuel
+          required: true
+        - label: I am willing to help implement the scraper for this source
+          required: false

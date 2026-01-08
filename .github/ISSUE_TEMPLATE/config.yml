@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Roadmap
+    url: https://github.com/SHN2004/OpenFuel/blob/main/ROADMAP.md
+    about: Check what's planned before requesting a feature
+  - name: Contributing Guide
+    url: https://github.com/SHN2004/OpenFuel/blob/main/CONTRIBUTING.md
+    about: Learn how to contribute to OpenFuel
