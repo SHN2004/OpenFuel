@@ -102,20 +102,28 @@ Execute the test suite using `pytest`:
 uv run pytest
 ```
 
+## Roadmap
+
+We're actively expanding OpenFuel! Current priorities:
+
+1. **More Cities** - Expand from ~50 to 200+ Indian cities
+2. **CNG/LPG Support** - Add more fuel types
+3. **API Versioning** - Multiple endpoints, per-city queries
+4. **Documentation** - API docs and contributor guides
+5. **Historical Data** - Price trends and history
+
+See [ROADMAP.md](./ROADMAP.md) for the full plan.
+
 ## Contributing
 
-Contributions are welcome and appreciated.
+Contributions are welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full guide.
 
-1.  Fork the repository.
-2.  Create a feature branch (`git checkout -b feature/new-feature`).
-3.  Commit your changes (`git commit -m 'Implement new feature'`).
-4.  Push to the branch (`git push origin feature/new-feature`).
-5.  Submit a Pull Request.
+**Quick start:**
+1. Check [open issues](https://github.com/SHN2004/OpenFuel/issues) for tasks
+2. Open an issue before starting major work
+3. Fork, branch, code, test, PR
 
-**Guidelines:**
-- Adhere to the project's coding standards.
-- Ensure backward compatibility for the `prices.json` schema.
-- Include unit tests for any new functionality.
+**Top priority:** Finding new data sources with more Indian cities.
 
 ## License
 
