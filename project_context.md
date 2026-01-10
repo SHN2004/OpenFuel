@@ -57,7 +57,7 @@ OpenFuel is a serverless, zero-cost real-time fuel price acquisition engine desi
 
 ### 5. GitHub Actions Workflow Specifics
 
-- **Scheduling:** The primary workflow (`daily_scrape.yml`) MUST be scheduled to run daily at `06:30 AM IST` (which is `01:00 UTC`).
+- **Scheduling:** The primary workflow (`daily_scrape.yml`) MUST be scheduled to run daily at `06:00 AM IST` (which is `00:30 UTC`).
 - **Commit Strategy:** The workflow MUST only commit changes to the repository if `prices.json` has genuinely changed. No empty commits.
 - **Authentication:** Use the automatically provided `GITHUB_TOKEN` for repository write access within the workflow.
 

@@ -8,7 +8,7 @@ OpenFuel is a "Git Scraping" project that automatically fetches daily petrol and
 
 ## Features
 
-- **Daily Updates:** Automatically scrapes prices every morning at 06:30 AM IST.
+- **Daily Updates:** Automatically scrapes prices every morning at 06:00 AM IST.
 - **Cost-Efficiency:** Zero operational costs, leveraging GitHub's free tier for compute and storage.
 - **High Availability:** Served via GitHub's global content delivery network (CDN).
 - **Reliability:** Includes fail-safe mechanisms to ensure data integrity and prevent overwrite on failure.

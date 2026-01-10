@@ -219,9 +219,6 @@ logging.error("Critical failure: %s", error)
 # All tests
 uv run pytest
 
-# With coverage
-uv run pytest --cov=src
-
 # Specific test
 uv run pytest tests/test_scraper.py::test_parse_fuel_data -v
 ```
