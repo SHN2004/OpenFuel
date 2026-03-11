@@ -1,5 +1,5 @@
 {
-  "last_updated_ist": "2026-03-10T08:39:45.501868+05:30",
+  "last_updated_ist": "2026-03-11T08:38:34.136529+05:30",
   "petrol": [
     {
       "city": "New Delhi",
@@ -15,11 +15,11 @@
     },
     {
       "city": "Chennai",
-      "price": 101.06
+      "price": 100.93
     },
     {
       "city": "Gurgaon",
-      "price": 95.39
+      "price": 95.65
     },
     {
       "city": "Noida",
@@ -27,11 +27,11 @@
     },
     {
       "city": "Bangalore",
-      "price": 102.96
+      "price": 102.92
     },
     {
       "city": "Bhubaneswar",
-      "price": 100.93
+      "price": 100.98
     },
     {
       "city": "Chandigarh",
@@ -39,7 +39,7 @@
     },
     {
       "city": "Hyderabad",
-      "price": 107.46
+      "price": 107.5
     },
     {
       "city": "Jaipur",
@@ -63,7 +63,7 @@
     },
     {
       "city": "Andhra Pradesh",
-      "price": 109.64
+      "price": 109.37
     },
     {
       "city": "Arunachal Pradesh",
@@ -71,7 +71,7 @@
     },
     {
       "city": "Assam",
-      "price": 98.24
+      "price": 98.23
     },
     {
       "city": "Bihar",
@@ -99,23 +99,23 @@
     },
     {
       "city": "Haryana",
-      "price": 95.95
+      "price": 95.96
     },
     {
       "city": "Himachal Pradesh",
-      "price": 95.17
+      "price": 94.87
     },
     {
       "city": "Jammu & Kashmir",
-      "price": 96.63
+      "price": 97.22
     },
     {
       "city": "Jharkhand",
-      "price": 97.86
+      "price": 97.89
     },
     {
       "city": "Karnataka",
-      "price": 102.96
+      "price": 102.92
     },
     {
       "city": "Kerala",
@@ -123,7 +123,7 @@
     },
     {
       "city": "Ladakh",
-      "price": 102.52
+      "price": 103.24
     },
     {
       "city": "Lakshadweep",
@@ -139,11 +139,11 @@
     },
     {
       "city": "Manipur",
-      "price": 99.16
+      "price": 99.33
     },
     {
       "city": "Meghalaya",
-      "price": 96.2
+      "price": 96.22
     },
     {
       "city": "Mizoram",
@@ -155,7 +155,7 @@
     },
     {
       "city": "Odisha",
-      "price": 100.93
+      "price": 100.98
     },
     {
       "city": "Pondicherry",
@@ -175,11 +175,11 @@
     },
     {
       "city": "Tamil Nadu",
-      "price": 101.06
+      "price": 100.93
     },
     {
       "city": "Telangana",
-      "price": 107.46
+      "price": 107.5
     },
     {
       "city": "Tripura",
@@ -213,11 +213,11 @@
     },
     {
       "city": "Chennai",
-      "price": 92.61
+      "price": 92.48
     },
     {
       "city": "Gurgaon",
-      "price": 87.85
+      "price": 88.1
     },
     {
       "city": "Noida",
@@ -229,7 +229,7 @@
     },
     {
       "city": "Bhubaneswar",
-      "price": 92.51
+      "price": 92.56
     },
     {
       "city": "Chandigarh",
@@ -261,11 +261,11 @@
     },
     {
       "city": "Andhra Pradesh",
-      "price": 97.47
+      "price": 97.22
     },
     {
       "city": "Arunachal Pradesh",
-      "price": 80.22
+      "price": 80.21
     },
     {
       "city": "Assam",
@@ -297,19 +297,19 @@
     },
     {
       "city": "Haryana",
-      "price": 88.4
+      "price": 88.41
     },
     {
       "city": "Himachal Pradesh",
-      "price": 87.31
+      "price": 86.82
     },
     {
       "city": "Jammu & Kashmir",
-      "price": 83.45
+      "price": 83.96
     },
     {
       "city": "Jharkhand",
-      "price": 92.62
+      "price": 92.66
     },
     {
       "city": "Karnataka",
@@ -321,7 +321,7 @@
     },
     {
       "city": "Ladakh",
-      "price": 87.6
+      "price": 88.27
     },
     {
       "city": "Lakshadweep",
@@ -337,11 +337,11 @@
     },
     {
       "city": "Manipur",
-      "price": 85.22
+      "price": 85.38
     },
     {
       "city": "Meghalaya",
-      "price": 87.47
+      "price": 87.74
     },
     {
       "city": "Mizoram",
@@ -353,7 +353,7 @@
     },
     {
       "city": "Odisha",
-      "price": 92.51
+      "price": 92.56
     },
     {
       "city": "Pondicherry",
@@ -373,7 +373,7 @@
     },
     {
       "city": "Tamil Nadu",
-      "price": 92.61
+      "price": 92.48
     },
     {
       "city": "Telangana",
