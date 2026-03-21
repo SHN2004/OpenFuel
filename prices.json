@@ -1,5 +1,5 @@
 {
-  "last_updated_ist": "2026-03-20T08:43:34.597769+05:30",
+  "last_updated_ist": "2026-03-21T08:35:30.217669+05:30",
   "petrol": [
     {
       "city": "New Delhi",
@@ -19,7 +19,7 @@
     },
     {
       "city": "Gurgaon",
-      "price": 95.51
+      "price": 95.65
     },
     {
       "city": "Noida",
@@ -63,7 +63,7 @@
     },
     {
       "city": "Andhra Pradesh",
-      "price": 109.53
+      "price": 109.63
     },
     {
       "city": "Arunachal Pradesh",
@@ -71,7 +71,7 @@
     },
     {
       "city": "Assam",
-      "price": 98.32
+      "price": 98.33
     },
     {
       "city": "Bihar",
@@ -103,7 +103,7 @@
     },
     {
       "city": "Himachal Pradesh",
-      "price": 95.06
+      "price": 95.21
     },
     {
       "city": "Jammu & Kashmir",
@@ -139,7 +139,7 @@
     },
     {
       "city": "Manipur",
-      "price": 99.21
+      "price": 99.16
     },
     {
       "city": "Meghalaya",
@@ -163,7 +163,7 @@
     },
     {
       "city": "Punjab",
-      "price": 97.81
+      "price": 97.99
     },
     {
       "city": "Rajasthan",
@@ -217,7 +217,7 @@
     },
     {
       "city": "Gurgaon",
-      "price": 87.97
+      "price": 88.1
     },
     {
       "city": "Noida",
@@ -261,7 +261,7 @@
     },
     {
       "city": "Andhra Pradesh",
-      "price": 97.38
+      "price": 97.47
     },
     {
       "city": "Arunachal Pradesh",
@@ -269,7 +269,7 @@
     },
     {
       "city": "Assam",
-      "price": 89.55
+      "price": 89.56
     },
     {
       "city": "Bihar",
@@ -301,7 +301,7 @@
     },
     {
       "city": "Himachal Pradesh",
-      "price": 87.26
+      "price": 87.33
     },
     {
       "city": "Jammu & Kashmir",
@@ -337,7 +337,7 @@
     },
     {
       "city": "Manipur",
-      "price": 85.26
+      "price": 85.22
     },
     {
       "city": "Meghalaya",
@@ -361,7 +361,7 @@
     },
     {
       "city": "Punjab",
-      "price": 87.64
+      "price": 87.81
     },
     {
       "city": "Rajasthan",
