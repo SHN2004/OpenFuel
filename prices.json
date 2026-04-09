@@ -1,5 +1,5 @@
 {
-  "last_updated_ist": "2026-04-08T09:07:02.549221+05:30",
+  "last_updated_ist": "2026-04-09T09:02:16.702708+05:30",
   "petrol": [
     {
       "city": "New Delhi",
@@ -19,19 +19,19 @@
     },
     {
       "city": "Gurgaon",
-      "price": 95.51
+      "price": 95.57
     },
     {
       "city": "Noida",
-      "price": 95.05
+      "price": 94.9
     },
     {
       "city": "Bangalore",
-      "price": 102.99
+      "price": 102.96
     },
     {
       "city": "Bhubaneswar",
-      "price": 101.19
+      "price": 101.03
     },
     {
       "city": "Chandigarh",
@@ -43,7 +43,7 @@
     },
     {
       "city": "Jaipur",
-      "price": 104.72
+      "price": 105.4
     },
     {
       "city": "Lucknow",
@@ -51,7 +51,7 @@
     },
     {
       "city": "Patna",
-      "price": 105.23
+      "price": 105.42
     },
     {
       "city": "Thiruvananthapuram",
@@ -63,11 +63,11 @@
     },
     {
       "city": "Andhra Pradesh",
-      "price": 109.37
+      "price": 109.75
     },
     {
       "city": "Arunachal Pradesh",
-      "price": 90.67
+      "price": 90.96
     },
     {
       "city": "Assam",
@@ -75,7 +75,7 @@
     },
     {
       "city": "Bihar",
-      "price": 105.23
+      "price": 105.42
     },
     {
       "city": "Chhatisgarh",
@@ -91,11 +91,11 @@
     },
     {
       "city": "Goa",
-      "price": 97.3
+      "price": 96.7
     },
     {
       "city": "Gujarat",
-      "price": 94.97
+      "price": 94.96
     },
     {
       "city": "Haryana",
@@ -103,11 +103,11 @@
     },
     {
       "city": "Himachal Pradesh",
-      "price": 95.33
+      "price": 95.42
     },
     {
       "city": "Jammu & Kashmir",
-      "price": 96.61
+      "price": 97.37
     },
     {
       "city": "Jharkhand",
@@ -115,7 +115,7 @@
     },
     {
       "city": "Karnataka",
-      "price": 102.99
+      "price": 102.96
     },
     {
       "city": "Kerala",
@@ -123,7 +123,7 @@
     },
     {
       "city": "Ladakh",
-      "price": 102.44
+      "price": 103.17
     },
     {
       "city": "Lakshadweep",
@@ -131,7 +131,7 @@
     },
     {
       "city": "Madhya Pradesh",
-      "price": 106.56
+      "price": 106.52
     },
     {
       "city": "Maharashtra",
@@ -139,7 +139,7 @@
     },
     {
       "city": "Manipur",
-      "price": 99.15
+      "price": 99.1
     },
     {
       "city": "Meghalaya",
@@ -155,7 +155,7 @@
     },
     {
       "city": "Odisha",
-      "price": 101.19
+      "price": 101.03
     },
     {
       "city": "Pondicherry",
@@ -163,11 +163,11 @@
     },
     {
       "city": "Punjab",
-      "price": 98.29
+      "price": 98.22
     },
     {
       "city": "Rajasthan",
-      "price": 104.72
+      "price": 105.4
     },
     {
       "city": "Sikkim",
@@ -183,7 +183,7 @@
     },
     {
       "city": "Tripura",
-      "price": 97.53
+      "price": 97.4
     },
     {
       "city": "Uttar Pradesh",
@@ -191,7 +191,7 @@
     },
     {
       "city": "Uttarakhand",
-      "price": 93.51
+      "price": 93.42
     },
     {
       "city": "West Bengal",
@@ -217,19 +217,19 @@
     },
     {
       "city": "Gurgaon",
-      "price": 87.98
+      "price": 88.03
     },
     {
       "city": "Noida",
-      "price": 88.19
+      "price": 88.01
     },
     {
       "city": "Bangalore",
-      "price": 91.06
+      "price": 90.99
     },
     {
       "city": "Bhubaneswar",
-      "price": 92.76
+      "price": 92.6
     },
     {
       "city": "Chandigarh",
@@ -241,7 +241,7 @@
     },
     {
       "city": "Jaipur",
-      "price": 90.21
+      "price": 90.82
     },
     {
       "city": "Lucknow",
@@ -249,11 +249,11 @@
     },
     {
       "city": "Patna",
-      "price": 91.49
+      "price": 91.67
     },
     {
       "city": "Thiruvananthapuram",
-      "price": 96.38
+      "price": 96.48
     },
     {
       "city": "Andaman & Nicobar",
@@ -261,11 +261,11 @@
     },
     {
       "city": "Andhra Pradesh",
-      "price": 97.22
+      "price": 97.59
     },
     {
       "city": "Arunachal Pradesh",
-      "price": 80.22
+      "price": 80.48
     },
     {
       "city": "Assam",
@@ -273,7 +273,7 @@
     },
     {
       "city": "Bihar",
-      "price": 91.49
+      "price": 91.67
     },
     {
       "city": "Chhatisgarh",
@@ -289,11 +289,11 @@
     },
     {
       "city": "Goa",
-      "price": 89.04
+      "price": 88.46
     },
     {
       "city": "Gujarat",
-      "price": 90.65
+      "price": 90.64
     },
     {
       "city": "Haryana",
@@ -301,11 +301,11 @@
     },
     {
       "city": "Himachal Pradesh",
-      "price": 87.37
+      "price": 87.49
     },
     {
       "city": "Jammu & Kashmir",
-      "price": 83.43
+      "price": 84.06
     },
     {
       "city": "Jharkhand",
@@ -313,15 +313,15 @@
     },
     {
       "city": "Karnataka",
-      "price": 91.06
+      "price": 90.99
     },
     {
       "city": "Kerala",
-      "price": 96.38
+      "price": 96.48
     },
     {
       "city": "Ladakh",
-      "price": 87.56
+      "price": 88.22
     },
     {
       "city": "Lakshadweep",
@@ -329,7 +329,7 @@
     },
     {
       "city": "Madhya Pradesh",
-      "price": 91.93
+      "price": 91.89
     },
     {
       "city": "Maharashtra",
@@ -337,11 +337,11 @@
     },
     {
       "city": "Manipur",
-      "price": 85.23
+      "price": 85.19
     },
     {
       "city": "Meghalaya",
-      "price": 87.73
+      "price": 87.82
     },
     {
       "city": "Mizoram",
@@ -353,7 +353,7 @@
     },
     {
       "city": "Odisha",
-      "price": 92.76
+      "price": 92.6
     },
     {
       "city": "Pondicherry",
@@ -361,11 +361,11 @@
     },
     {
       "city": "Punjab",
-      "price": 88.09
+      "price": 88.03
     },
     {
       "city": "Rajasthan",
-      "price": 90.21
+      "price": 90.82
     },
     {
       "city": "Sikkim",
@@ -381,7 +381,7 @@
     },
     {
       "city": "Tripura",
-      "price": 86.55
+      "price": 86.44
     },
     {
       "city": "Uttar Pradesh",
@@ -389,7 +389,7 @@
     },
     {
       "city": "Uttarakhand",
-      "price": 88.34
+      "price": 88.21
     },
     {
       "city": "West Bengal",
