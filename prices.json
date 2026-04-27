@@ -1,5 +1,5 @@
 {
-  "last_updated_ist": "2026-04-26T09:29:52.499995+05:30",
+  "last_updated_ist": "2026-04-27T09:34:20.047093+05:30",
   "petrol": [
     {
       "city": "New Delhi",
@@ -7,23 +7,23 @@
     },
     {
       "city": "Kolkata",
-      "price": 105.45
+      "price": 105.41
     },
     {
       "city": "Mumbai",
-      "price": 103.54
+      "price": 103.5
     },
     {
       "city": "Chennai",
-      "price": 101.23
+      "price": 100.9
     },
     {
       "city": "Gurgaon",
-      "price": 95.28
+      "price": 95.39
     },
     {
       "city": "Noida",
-      "price": 94.74
+      "price": 94.88
     },
     {
       "city": "Bangalore",
@@ -31,7 +31,7 @@
     },
     {
       "city": "Bhubaneswar",
-      "price": 100.98
+      "price": 100.93
     },
     {
       "city": "Chandigarh",
@@ -43,7 +43,7 @@
     },
     {
       "city": "Jaipur",
-      "price": 104.86
+      "price": 104.62
     },
     {
       "city": "Lucknow",
@@ -51,7 +51,7 @@
     },
     {
       "city": "Patna",
-      "price": 105.59
+      "price": 105.23
     },
     {
       "city": "Thiruvananthapuram",
@@ -63,7 +63,7 @@
     },
     {
       "city": "Andhra Pradesh",
-      "price": 109.65
+      "price": 109.37
     },
     {
       "city": "Arunachal Pradesh",
@@ -71,15 +71,15 @@
     },
     {
       "city": "Assam",
-      "price": 98.35
+      "price": 98.46
     },
     {
       "city": "Bihar",
-      "price": 105.59
+      "price": 105.23
     },
     {
       "city": "Chhatisgarh",
-      "price": 100.58
+      "price": 100.43
     },
     {
       "city": "Dadra and Nagar Haveli and Daman and Diu",
@@ -95,19 +95,19 @@
     },
     {
       "city": "Gujarat",
-      "price": 94.94
+      "price": 94.62
     },
     {
       "city": "Haryana",
-      "price": 95.95
+      "price": 95.96
     },
     {
       "city": "Himachal Pradesh",
-      "price": 95.33
+      "price": 95.35
     },
     {
       "city": "Jammu & Kashmir",
-      "price": 96.49
+      "price": 96.63
     },
     {
       "city": "Jharkhand",
@@ -123,7 +123,7 @@
     },
     {
       "city": "Ladakh",
-      "price": 103.82
+      "price": 102.44
     },
     {
       "city": "Lakshadweep",
@@ -131,15 +131,15 @@
     },
     {
       "city": "Madhya Pradesh",
-      "price": 106.63
+      "price": 106.52
     },
     {
       "city": "Maharashtra",
-      "price": 103.54
+      "price": 103.5
     },
     {
       "city": "Manipur",
-      "price": 99.1
+      "price": 99.27
     },
     {
       "city": "Meghalaya",
@@ -147,7 +147,7 @@
     },
     {
       "city": "Mizoram",
-      "price": 99.15
+      "price": 99.42
     },
     {
       "city": "Nagaland",
@@ -155,19 +155,19 @@
     },
     {
       "city": "Odisha",
-      "price": 100.98
+      "price": 100.93
     },
     {
       "city": "Pondicherry",
-      "price": 96.32
+      "price": 96.26
     },
     {
       "city": "Punjab",
-      "price": 98.31
+      "price": 98.16
     },
     {
       "city": "Rajasthan",
-      "price": 104.86
+      "price": 104.62
     },
     {
       "city": "Sikkim",
@@ -175,7 +175,7 @@
     },
     {
       "city": "Tamil Nadu",
-      "price": 101.23
+      "price": 100.9
     },
     {
       "city": "Telangana",
@@ -183,7 +183,7 @@
     },
     {
       "city": "Tripura",
-      "price": 97.57
+      "price": 97.61
     },
     {
       "city": "Uttar Pradesh",
@@ -191,11 +191,11 @@
     },
     {
       "city": "Uttarakhand",
-      "price": 93.42
+      "price": 93.78
     },
     {
       "city": "West Bengal",
-      "price": 105.45
+      "price": 105.41
     }
   ],
   "diesel": [
@@ -213,15 +213,15 @@
     },
     {
       "city": "Chennai",
-      "price": 92.81
+      "price": 92.48
     },
     {
       "city": "Gurgaon",
-      "price": 87.75
+      "price": 87.85
     },
     {
       "city": "Noida",
-      "price": 87.81
+      "price": 87.98
     },
     {
       "city": "Bangalore",
@@ -229,7 +229,7 @@
     },
     {
       "city": "Bhubaneswar",
-      "price": 92.56
+      "price": 92.51
     },
     {
       "city": "Chandigarh",
@@ -241,7 +241,7 @@
     },
     {
       "city": "Jaipur",
-      "price": 90.34
+      "price": 90.12
     },
     {
       "city": "Lucknow",
@@ -249,7 +249,7 @@
     },
     {
       "city": "Patna",
-      "price": 91.82
+      "price": 91.49
     },
     {
       "city": "Thiruvananthapuram",
@@ -261,23 +261,23 @@
     },
     {
       "city": "Andhra Pradesh",
-      "price": 97.47
+      "price": 97.22
     },
     {
       "city": "Arunachal Pradesh",
-      "price": 80.21
+      "price": 80.22
     },
     {
       "city": "Assam",
-      "price": 89.57
+      "price": 89.68
     },
     {
       "city": "Bihar",
-      "price": 91.82
+      "price": 91.49
     },
     {
       "city": "Chhatisgarh",
-      "price": 93.53
+      "price": 93.37
     },
     {
       "city": "Dadra and Nagar Haveli and Daman and Diu",
@@ -293,19 +293,19 @@
     },
     {
       "city": "Gujarat",
-      "price": 90.61
+      "price": 90.29
     },
     {
       "city": "Haryana",
-      "price": 88.4
+      "price": 88.41
     },
     {
       "city": "Himachal Pradesh",
-      "price": 87.31
+      "price": 87.42
     },
     {
       "city": "Jammu & Kashmir",
-      "price": 85.33
+      "price": 85.46
     },
     {
       "city": "Jharkhand",
@@ -321,7 +321,7 @@
     },
     {
       "city": "Ladakh",
-      "price": 88.82
+      "price": 87.56
     },
     {
       "city": "Lakshadweep",
@@ -329,7 +329,7 @@
     },
     {
       "city": "Madhya Pradesh",
-      "price": 91.99
+      "price": 91.89
     },
     {
       "city": "Maharashtra",
@@ -337,7 +337,7 @@
     },
     {
       "city": "Manipur",
-      "price": 85.19
+      "price": 85.34
     },
     {
       "city": "Meghalaya",
@@ -345,7 +345,7 @@
     },
     {
       "city": "Mizoram",
-      "price": 87.97
+      "price": 88.23
     },
     {
       "city": "Nagaland",
@@ -353,19 +353,19 @@
     },
     {
       "city": "Odisha",
-      "price": 92.56
+      "price": 92.51
     },
     {
       "city": "Pondicherry",
-      "price": 86.53
+      "price": 86.47
     },
     {
       "city": "Punjab",
-      "price": 88.12
+      "price": 87.97
     },
     {
       "city": "Rajasthan",
-      "price": 90.34
+      "price": 90.12
     },
     {
       "city": "Sikkim",
@@ -373,7 +373,7 @@
     },
     {
       "city": "Tamil Nadu",
-      "price": 92.81
+      "price": 92.48
     },
     {
       "city": "Telangana",
@@ -381,7 +381,7 @@
     },
     {
       "city": "Tripura",
-      "price": 86.59
+      "price": 86.62
     },
     {
       "city": "Uttar Pradesh",
@@ -389,7 +389,7 @@
     },
     {
       "city": "Uttarakhand",
-      "price": 88.21
+      "price": 88.7
     },
     {
       "city": "West Bengal",
