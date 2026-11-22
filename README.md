@@ -48,6 +48,8 @@ GET https://raw.githubusercontent.com/SHN2004/OpenFuel/main/prices.json
 
 `city` holds the district name. `state` is `null` for the few names the source lists under more than one state (e.g. Aurangabad). A district price is representative; individual pumps can differ slightly.
 
+For compatibility with the pre-November-2026 API, the lists also contain state-wide prices (an entry whose `city` equals its `state`, e.g. `"Kerala"`) and the old spellings `Bhubaneswar`, `Thiruvananthapuram`, `Chhatisgarh` and `Jammu & Kashmir`. Entries are ordered alphabetically by district, so look prices up by name, not by position. No longer available: `Andaman & Nicobar`, `Dadra and Nagar Haveli and Daman and Diu`, `Ladakh`, `Lakshadweep`.
+
 ## How It Works
 
 1.  **Scheduled Execution:** A GitHub Actions workflow triggers daily based on a cron schedule.

@@ -32,6 +32,13 @@ REQUEST_TIMEOUT = 30
 MIN_DISTRICTS = 600  # ~709 as of Nov 2026; fewer means the page layout changed
 # PPAC column order, named as Business Today names them (PPAC's "Delhi" is "New Delhi").
 PPAC_METROS = ("New Delhi", "Mumbai", "Chennai", "Kolkata")
+# Business Today name -> name the pre-Nov-2026 (goodreturns) API used; both are emitted.
+LEGACY_NAMES = {
+    "Bhubhaneswar": "Bhubaneswar",
+    "Trivandrum": "Thiruvananthapuram",
+    "Chhattisgarh": "Chhatisgarh",
+    "Jammu And Kashmir": "Jammu & Kashmir",
+}
 
 
 class ExtractionError(Exception):
@@ -120,33 +127,61 @@ def parse_fuel_data(html_content: str, fuel_type: str) -> List[Dict[str, Union[s
         ExtractionError: If the district table is missing or yields no prices.
     """
     soup = BeautifulSoup(html_content, "html.parser")
-    table = next(
-        (t for t in soup.find_all("table")
-         if (tr := t.find("tr")) and tr.get_text(strip=True).upper().startswith("CITY")),
-        None,
-    )
-    if table is None:
+
+    def table_starting_with(header: str):
+        return next(
+            (t for t in soup.find_all("table")
+             if (tr := t.find("tr")) and tr.get_text(strip=True).upper().startswith(header)),
+            None,
+        )
+
+    def rows(table) -> List[Tuple[str, float]]:
+        out = []
+        for row in table.find_all("tr"):
+            cols = row.find_all("td")
+            if len(cols) < 2:
+                continue
+            name = cols[0].get_text(strip=True)
+            price = clean_price_string(cols[1].get_text(strip=True))
+            if not name or price is None:
+                logging.warning(f"Could not parse row {row.get_text(' ', strip=True)!r}")
+                continue
+            out.append((name, price))
+        return out
+
+    district_table = table_starting_with("CITY")
+    if district_table is None:
         raise ExtractionError(f"No district table found in {fuel_type} data.")
 
     states = _district_states(html_content)
     unique_data: Dict[str, Dict[str, Union[str, float, None]]] = {}
 
-    for row in table.find_all("tr"):
-        cols = row.find_all("td")
-        if len(cols) < 2:
-            continue
-        name = cols[0].get_text(strip=True)
-        price = clean_price_string(cols[1].get_text(strip=True))
-        if not name or price is None:
-            logging.warning(f"Could not parse row {row.get_text(' ', strip=True)!r}")
-            continue
-        if name not in unique_data:
-            unique_data[name] = {"city": name, "state": states.get(name.lower()), "price": price}
+    def add(name: str, state: Optional[str], price: float) -> None:
+        # First entry wins, so a district keeps its row if a state shares its name (Chandigarh).
+        unique_data.setdefault(name, {"city": name, "state": state, "price": price})
 
-    if not unique_data:
+    for name, price in rows(district_table):
+        add(name, states.get(name.lower()), price)
+    district_count = len(unique_data)
+    if not district_count:
         raise ExtractionError(f"Failed to extract any fuel data from {fuel_type} page.")
 
-    logging.info(f"Successfully extracted {len(unique_data)} {fuel_type} prices")
+    # State-wide prices, which the pre-Nov-2026 API listed alongside cities.
+    state_table = table_starting_with("STATE")
+    if state_table is None:
+        logging.warning(f"No state table found in {fuel_type} data")
+    else:
+        for name, price in rows(state_table):
+            add(name, name, price)
+
+    for new, old in LEGACY_NAMES.items():
+        if new in unique_data:
+            add(old, unique_data[new]["state"], unique_data[new]["price"])
+
+    logging.info(
+        f"Extracted {district_count} districts and {len(unique_data) - district_count} "
+        f"state/legacy {fuel_type} prices"
+    )
     return list(unique_data.values())
 
 

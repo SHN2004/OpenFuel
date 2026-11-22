@@ -32,6 +32,17 @@ def MOCK_HTML_COMPLETE():
             <td>₹110.50</td><td><div>0.00</div></td></tr>
         <tr><td><a href="/fuel-price/petrol-price-in-nowhere-today">Nowhere</a></td>
             <td>N/A</td><td><div>0.00</div></td></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-trivandrum-today">Trivandrum</a></td>
+            <td>₹115.49</td><td><div>0.00</div></td></tr>
+    </table>
+    <table class="table table-striped">
+        <tr><th>STATE</th><th>PETROL PRICE/LITRE</th><th>CHANGES</th></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-uttar-pradesh-today">Uttar Pradesh</a></td>
+            <td>₹102.36</td><td><div>0.00</div></td></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-chhattisgarh-today">Chhattisgarh</a></td>
+            <td>₹108.99</td><td><div>0.00</div></td></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-lucknow-today">Lucknow</a></td>
+            <td>₹999.99</td><td><div>0.00</div></td></tr>
     </table>
     """
 
@@ -135,10 +146,17 @@ def test_parse_fuel_data_complete(MOCK_HTML_COMPLETE):
     result = parse_fuel_data(MOCK_HTML_COMPLETE, "petrol")
     by_city = {item['city']: item for item in result}
 
-    # Open Price table ignored, duplicate Lucknow collapsed, unparseable price skipped
-    assert set(by_city) == {"Barabanki", "Lucknow", "Aurangabad"}
+    # Open Price table ignored, duplicate Lucknow collapsed, unparseable price skipped,
+    # state rows and legacy spellings added
+    assert set(by_city) == {
+        "Barabanki", "Lucknow", "Aurangabad", "Trivandrum",
+        "Uttar Pradesh", "Chhattisgarh", "Thiruvananthapuram", "Chhatisgarh",
+    }
     assert by_city["Barabanki"] == {"city": "Barabanki", "state": "Uttar Pradesh", "price": 102.68}
-    assert by_city["Lucknow"]["price"] == 102.23
+    assert by_city["Lucknow"]["price"] == 102.23  # district row wins over same-named state row
+    assert by_city["Uttar Pradesh"] == {"city": "Uttar Pradesh", "state": "Uttar Pradesh", "price": 102.36}
+    assert by_city["Chhatisgarh"]["price"] == 108.99
+    assert by_city["Thiruvananthapuram"] == {"city": "Thiruvananthapuram", "state": None, "price": 115.49}
     # Listed under two states by the source, so the state is unknown rather than guessed
     assert by_city["Aurangabad"]["state"] is None
 
@@ -146,9 +164,9 @@ def test_parse_fuel_data_complete(MOCK_HTML_COMPLETE):
 def test_parse_fuel_data_without_state_map(MOCK_HTML_COMPLETE):
     """Prices still parse if the embedded state map disappears."""
     html = MOCK_HTML_COMPLETE.replace("let states", "let other")
-    result = parse_fuel_data(html, "petrol")
-    assert len(result) == 3
-    assert all(item["state"] is None for item in result)
+    by_city = {item["city"]: item for item in parse_fuel_data(html, "petrol")}
+    assert by_city["Barabanki"]["price"] == 102.68
+    assert by_city["Barabanki"]["state"] is None
 
 
 def test_parse_ppac_text():
