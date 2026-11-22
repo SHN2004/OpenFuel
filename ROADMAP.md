@@ -8,14 +8,15 @@ Make OpenFuel the go-to open-source fuel price API for India - covering all majo
 
 ---
 
-## Phase 1: Expand City Coverage (High Priority)
+## Phase 1: Expand City Coverage (Done, Nov 2026)
 
 **Goal**: Expand from ~50 cities/states to 200+ cities across India.
 
-### What We Need
-- **New data sources** that cover more Indian cities
-- Current source (goodreturns.in) mainly covers state capitals and metro cities
-- Looking for sources that include tier-2 and tier-3 cities
+**Status**: Switched to businesstoday.in, which covers ~709 districts, cross-checked daily against PPAC metro prices.
+
+### What We Need Next
+- **A backup data source** with district coverage (cmv360.com is a candidate, and also has CNG)
+- Mapping district names to official LGD district codes, so names match across sources
 
 ### How to Contribute
 1. Find a reliable website that lists daily fuel prices for Indian cities

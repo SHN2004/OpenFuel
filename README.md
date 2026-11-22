@@ -2,7 +2,7 @@
 
 **Serverless, zero-cost, real-time fuel price API for India.**
 
-OpenFuel is a "Git Scraping" project that automatically fetches daily petrol and diesel prices from `goodreturns.in`, cleans the data, and serves it as a static JSON API. It runs entirely on GitHub Actions, providing a high-availability, self-updating database without the need for traditional server infrastructure.
+OpenFuel is a "Git Scraping" project that automatically fetches daily petrol and diesel prices for ~700 Indian districts from `businesstoday.in`, checks them against official PPAC metro prices, cleans the data, and serves it as a static JSON API. It runs entirely on GitHub Actions, providing a high-availability, self-updating database without the need for traditional server infrastructure.
 
 ---
 
@@ -27,28 +27,34 @@ GET https://raw.githubusercontent.com/SHN2004/OpenFuel/main/prices.json
 **Response Schema:**
 ```json
 {
-  "last_updated_ist": "2025-12-25T12:34:57.438675+05:30",
+  "last_updated_ist": "2026-11-22T11:11:04.978123+05:30",
+  "source": "businesstoday.in",
   "petrol": [
     {
-      "city": "New Delhi",
-      "price": 94.77
+      "city": "Barabanki",
+      "state": "Uttar Pradesh",
+      "price": 102.68
     }
   ],
   "diesel": [
     {
-      "city": "New Delhi",
-      "price": 87.67
+      "city": "Barabanki",
+      "state": "Uttar Pradesh",
+      "price": 95.27
     }
   ]
 }
 ```
 
+`city` holds the district name. `state` is `null` for the few names the source lists under more than one state (e.g. Aurangabad). A district price is representative; individual pumps can differ slightly.
+
 ## How It Works
 
 1.  **Scheduled Execution:** A GitHub Actions workflow triggers daily based on a cron schedule.
-2.  **Data Extraction:** A Python-based scraper fetches current prices from source providers.
-3.  **Data Processing:** Extracted data is cleaned, normalized, and merged into a structured format.
-4.  **Versioned Storage:** If changes are detected, the updated dataset is committed to the repository.
+2.  **Data Extraction:** A Python-based scraper fetches the all-India district tables from Business Today.
+3.  **Validation:** The run fails, leaving yesterday's data in place, if fewer than 600 districts come back or if metro prices disagree with PPAC's official figures for the same day.
+4.  **Data Processing:** Extracted data is cleaned, normalized, and merged into a structured format.
+5.  **Versioned Storage:** If changes are detected, the updated dataset is committed to the repository.
 
 ## Local Development
 

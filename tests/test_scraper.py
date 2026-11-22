@@ -3,49 +3,36 @@ import requests
 import requests_mock
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
-from src.scraper import get_request_session, fetch_fuel_data, parse_fuel_data, ExtractionError, USER_AGENT, REQUEST_TIMEOUT
+from datetime import date
+from src.scraper import get_request_session, fetch_fuel_data, parse_fuel_data, parse_ppac_text, ExtractionError, USER_AGENT, REQUEST_TIMEOUT
 
 @pytest.fixture
 def MOCK_HTML_COMPLETE():
+    # Shape of a Business Today fuel page: embedded state map + all-India district table.
     return """
-    <section>
-        <div class="gd-fuel-table-block">
-            <div class="gd-fuel-table-data">
-                <h2 class="gd-fuel-table-block-title">Petrol Price in Indian Metro Cities</h2>
-                <table class="gd-fuel-table-list">
-                    <tbody>
-                        <tr><th>City</th><th>Price</th></tr>
-                        <tr>
-                            <td><a href="/delhi">New Delhi</a></td>
-                            <td>₹94.77</td>
-                        </tr>
-                        <tr>
-                            <td><a href="/chandigarh">Chandigarh</a></td>
-                            <td>₹94.30</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="gd-fuel-table-block">
-            <div class="gd-fuel-table-data">
-                <h2 class="gd-fuel-table-block-title">State-Wise Petrol Price in India</h2>
-                <table class="gd-fuel-table-list">
-                    <tbody>
-                        <tr><th>State</th><th>Price</th></tr>
-                        <tr>
-                            <td><a href="/chandigarh-state">Chandigarh</a></td>
-                            <td>₹94.30</td>
-                        </tr>
-                        <tr>
-                            <td><a href="/punjab">Punjab</a></td>
-                            <td>₹98.15</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
+    <script>
+        function manageDependentdropdown(state, city = '') {
+            let states = {"master": {
+                "uttar pradesh": {"barabanki": {"city_id": 1}, "lucknow": {"city_id": 2}},
+                "bihar": {"aurangabad": {"city_id": 3}},
+                "maharashtra": {"aurangabad": {"city_id": 4}}
+            }};
+        }
+    </script>
+    <table><tr><td>Open Price</td><td>₹102.91</td></tr></table>
+    <table class="table table-striped">
+        <tr><th>CITY</th><th>PETROL PRICE/LITRE</th><th>CHANGES</th></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-barabanki-today">Barabanki</a></td>
+            <td>₹102.68</td><td><div>0.00</div></td></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-lucknow-today">Lucknow</a></td>
+            <td>₹102.23</td><td><div>0.00</div></td></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-lucknow-today">Lucknow</a></td>
+            <td>₹102.23</td><td><div>0.00</div></td></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-aurangabad-today">Aurangabad</a></td>
+            <td>₹110.50</td><td><div>0.00</div></td></tr>
+        <tr><td><a href="/fuel-price/petrol-price-in-nowhere-today">Nowhere</a></td>
+            <td>N/A</td><td><div>0.00</div></td></tr>
+    </table>
     """
 
 @pytest.fixture
@@ -144,30 +131,39 @@ def test_fetch_fuel_data_uses_provided_session():
         assert result == mock_html
 
 def test_parse_fuel_data_complete(MOCK_HTML_COMPLETE):
-    """
-    Test parse_fuel_data with a complete HTML structure containing duplicate cities.
-    AC 3, 4, 5, 6, 7
-    """
+    """District table is parsed, deduplicated, and joined with states."""
     result = parse_fuel_data(MOCK_HTML_COMPLETE, "petrol")
-    
-    # Convert list of dicts to a dictionary for easier assertion
-    result_dict = {item['city']: item['price'] for item in result}
-    
-    # AC 5: Check extraction
-    assert result_dict['New Delhi'] == 94.77
-    assert result_dict['Chandigarh'] == 94.30
-    assert result_dict['Punjab'] == 98.15
-    
-    # AC 6: Check deduplication (Chandigarh appears twice in HTML, should be extracted once)
-    # The list length should match unique cities
+    by_city = {item['city']: item for item in result}
+
+    # Open Price table ignored, duplicate Lucknow collapsed, unparseable price skipped
+    assert set(by_city) == {"Barabanki", "Lucknow", "Aurangabad"}
+    assert by_city["Barabanki"] == {"city": "Barabanki", "state": "Uttar Pradesh", "price": 102.68}
+    assert by_city["Lucknow"]["price"] == 102.23
+    # Listed under two states by the source, so the state is unknown rather than guessed
+    assert by_city["Aurangabad"]["state"] is None
+
+
+def test_parse_fuel_data_without_state_map(MOCK_HTML_COMPLETE):
+    """Prices still parse if the embedded state map disappears."""
+    html = MOCK_HTML_COMPLETE.replace("let states", "let other")
+    result = parse_fuel_data(html, "petrol")
     assert len(result) == 3
-    
-    # Ensure structure matches AC 7
-    assert isinstance(result, list)
-    assert isinstance(result[0], dict)
-    assert 'city' in result[0]
-    assert 'price' in result[0]
-    assert isinstance(result[0]['price'], float)
+    assert all(item["state"] is None for item in result)
+
+
+def test_parse_ppac_text():
+    text = (
+        "Table Posted: 20-Nov-26\n"
+        "Delhi Mumbai Chennai Kolkata Delhi Mumbai Chennai Kolkata\n"
+        "20-Nov-26 102.12   111.21   107.77   113.51   20-Nov-26 95.20   97.83   99.55   99.82\n"
+        "19-Nov-26 101.00   111.21   107.77   113.51   19-Nov-26 95.20   97.83   99.55   99.82\n"
+    )
+    ppac_date, prices = parse_ppac_text(text)
+    assert ppac_date == date(2026, 11, 20)
+    assert prices["petrol"] == {"New Delhi": 102.12, "Mumbai": 111.21, "Chennai": 107.77, "Kolkata": 113.51}
+    assert prices["diesel"]["Kolkata"] == 99.82
+    assert parse_ppac_text("no table here") is None
+
 
 def test_parse_fuel_data_no_table(MOCK_HTML_NO_TABLE):
     """

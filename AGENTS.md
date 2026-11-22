@@ -29,7 +29,7 @@ This project does not have explicit linting (ruff, black, flake8) or type checki
 ```
 main.py                              # Entry point - orchestrates scraping pipeline
 ├── src/
-│   ├── scraper.py                   # HTTP fetching (cloudscraper) and HTML parsing (BeautifulSoup)
+│   ├── scraper.py                   # HTTP fetching (requests), HTML parsing (BeautifulSoup), PPAC PDF check (pypdf)
 │   └── utils.py                     # Price string cleaning/normalization
 ├── tests/
 │   ├── conftest.py                  # Shared pytest fixtures
@@ -56,15 +56,6 @@ main.py                              # Entry point - orchestrates scraping pipel
 - Order: standard library → third-party → local modules
 - Group imports logically with blank lines between groups
 - Use `from typing import Optional, Dict, List, Union` for type hints
-- Try/except imports for optional dependencies:
-  ```python
-  try:
-      import cloudscraper
-      CLOUDSCRAPER_AVAILABLE = True
-  except ImportError:
-      CLOUDSCRAPER_AVAILABLE = False
-      cloudscraper = None
-  ```
 
 ### Type Hints
 - All function parameters and return types must have type hints
@@ -101,9 +92,9 @@ main.py                              # Entry point - orchestrates scraping pipel
 ### Constants
 Define URL patterns, user agents, timeouts, and CSS selectors at module level:
 ```python
-PETROL_URL = "https://www.goodreturns.in/petrol-price.html"
+PETROL_URL = "https://www.businesstoday.in/fuel-price/petrol-price-in-delhi-today"
 REQUEST_TIMEOUT = 30
-CSS_SELECTOR_ROW = "tr"
+MIN_DISTRICTS = 600
 ```
 
 ### Testing

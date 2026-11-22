@@ -11,12 +11,14 @@ from pathlib import Path
 
 from src.scraper import (
     fetch_fuel_data,
+    fetch_ppac_metro_prices,
     parse_fuel_data,
-    get_scraper,
+    get_request_session,
     PETROL_URL,
     DIESEL_URL,
+    MIN_DISTRICTS,
+    SOURCE,
     ExtractionError,
-    CLOUDSCRAPER_AVAILABLE,
 )
 
 
@@ -30,10 +32,46 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+IST = timezone(timedelta(hours=5, minutes=30))
+PPAC_TOLERANCE = 0.05  # rupees; oil companies differ by a paisa or two
+
+
 def get_ist_timestamp() -> str:
     """Return the current timestamp in IST timezone (ISO 8601)."""
-    ist = timezone(timedelta(hours=5, minutes=30))
-    return datetime.now(ist).isoformat()
+    return datetime.now(IST).isoformat()
+
+
+def check_against_ppac(petrol_data: list, diesel_data: list, session) -> None:
+    """
+    Compare metro prices with PPAC's official figures.
+
+    Raises ExtractionError on a mismatch only when PPAC is dated today; PPAC posts
+    with a lag of a day or two, so older figures can legitimately differ after a revision.
+    """
+    ppac = fetch_ppac_metro_prices(session)
+    if ppac is None:
+        logger.warning("PPAC cross-check skipped: could not fetch official prices")
+        return
+
+    ppac_date, official = ppac
+    ours = {"petrol": petrol_data, "diesel": diesel_data}
+    mismatches = []
+    for fuel, metros in official.items():
+        scraped = {row["city"]: row["price"] for row in ours[fuel]}
+        for city, price in metros.items():
+            got = scraped.get(city)
+            if got is None or abs(got - price) > PPAC_TOLERANCE:
+                mismatches.append(f"{fuel} {city}: scraped {got}, PPAC {price}")
+
+    if not mismatches:
+        logger.info("PPAC cross-check passed (PPAC dated %s)", ppac_date)
+    elif ppac_date == datetime.now(IST).date():
+        raise ExtractionError("PPAC mismatch: " + "; ".join(mismatches))
+    else:
+        logger.warning(
+            "PPAC (dated %s) differs, likely a price revision since: %s",
+            ppac_date, "; ".join(mismatches),
+        )
 
 
 def scrape_fuel_prices() -> dict:
@@ -46,18 +84,11 @@ def scrape_fuel_prices() -> dict:
     Raises:
         ExtractionError: If scraping fails critically.
     """
-    if not CLOUDSCRAPER_AVAILABLE:
-        logger.error(
-            "cloudscraper is not installed. Install with: uv add cloudscraper"
-        )
-        sys.exit(1)
-
     logger.info("=" * 70)
     logger.info("Starting OpenFuel scraping pipeline")
     logger.info("=" * 70)
 
-    # Create a single scraper instance to reuse
-    scraper = get_scraper()
+    scraper = get_request_session()
 
     # Fetch and parse petrol data
     logger.info("Fetching petrol prices...")
@@ -89,21 +120,20 @@ def scrape_fuel_prices() -> dict:
         logger.error("Failed to parse diesel data: %s", exc)
         raise
 
-    # Validate we got reasonable data
-    if len(petrol_data) < 20:
-        logger.warning(
-            "Only got %d petrol prices, expected at least 20", len(petrol_data)
-        )
+    # A sharp drop in rows means the source layout changed; keep yesterday's file instead.
+    for fuel, rows in (("petrol", petrol_data), ("diesel", diesel_data)):
+        if len(rows) < MIN_DISTRICTS:
+            raise ExtractionError(
+                f"Only got {len(rows)} {fuel} prices, expected at least {MIN_DISTRICTS}"
+            )
 
-    if len(diesel_data) < 20:
-        logger.warning(
-            "Only got %d diesel prices, expected at least 20", len(diesel_data)
-        )
+    check_against_ppac(petrol_data, diesel_data, scraper)
 
     # Create output structure
     timestamp = get_ist_timestamp()
     output = {
         "last_updated_ist": timestamp,
+        "source": SOURCE,
         "petrol": petrol_data,
         "diesel": diesel_data,
     }
