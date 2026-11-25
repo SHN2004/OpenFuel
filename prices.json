@@ -1,5 +1,5 @@
 {
-  "last_updated_ist": "2026-11-24T15:42:49.604238+05:30",
+  "last_updated_ist": "2026-11-25T14:27:10.544317+05:30",
   "source": "businesstoday.in",
   "petrol": [
     {
@@ -95,7 +95,7 @@
     {
       "city": "Amethi Csm Nagar",
       "state": "Uttar Pradesh",
-      "price": 103.06
+      "price": 103.21
     },
     {
       "city": "Amravati",
@@ -405,7 +405,7 @@
     {
       "city": "Bhavnagar",
       "state": "Gujarat",
-      "price": 103.05
+      "price": 103.41
     },
     {
       "city": "Bhilwara",
@@ -825,7 +825,7 @@
     {
       "city": "Dhemaji",
       "state": "Assam",
-      "price": 106.95
+      "price": 106.94
     },
     {
       "city": "Dhenkanal",
@@ -1080,7 +1080,7 @@
     {
       "city": "Ghaziabad",
       "state": "Uttar Pradesh",
-      "price": 101.8
+      "price": 101.88
     },
     {
       "city": "Ghazipur",
@@ -1135,7 +1135,7 @@
     {
       "city": "Gorakhpur",
       "state": "Uttar Pradesh",
-      "price": 102.33
+      "price": 102.13
     },
     {
       "city": "Greater Mumbai",
@@ -1410,7 +1410,7 @@
     {
       "city": "Jehanabad",
       "state": "Bihar",
-      "price": 114.63
+      "price": 114.56
     },
     {
       "city": "Jhabua",
@@ -1445,7 +1445,7 @@
     {
       "city": "Jhunjhunu",
       "state": "Rajasthan",
-      "price": 113.11
+      "price": 113.69
     },
     {
       "city": "Jind",
@@ -1710,7 +1710,7 @@
     {
       "city": "Kishanganj",
       "state": "Bihar",
-      "price": 114.83
+      "price": 114.24
     },
     {
       "city": "Kishtwar",
@@ -2210,7 +2210,7 @@
     {
       "city": "Nagpur",
       "state": "Maharashtra",
-      "price": 111.72
+      "price": 111.8
     },
     {
       "city": "Nainital",
@@ -2655,7 +2655,7 @@
     {
       "city": "Rampur",
       "state": "Uttar Pradesh",
-      "price": 102.23
+      "price": 102.51
     },
     {
       "city": "Ranchi",
@@ -2815,7 +2815,7 @@
     {
       "city": "Satara",
       "state": "Maharashtra",
-      "price": 113.03
+      "price": 111.88
     },
     {
       "city": "Satna",
@@ -3530,7 +3530,7 @@
     {
       "city": "Bihar",
       "state": "Bihar",
-      "price": 114.37
+      "price": 114.36
     },
     {
       "city": "Chhattisgarh",
@@ -3560,7 +3560,7 @@
     {
       "city": "Gujarat",
       "state": "Gujarat",
-      "price": 102.29
+      "price": 102.3
     },
     {
       "city": "Haryana",
@@ -3576,11 +3576,6 @@
       "city": "Jammu And Kashmir",
       "state": "Jammu And Kashmir",
       "price": 106.5
-    },
-    {
-      "city": "Jharkhand",
-      "state": "Jharkhand",
-      "price": 106.07
     },
     {
       "city": "Karnataka",
@@ -3600,7 +3595,7 @@
     {
       "city": "Maharashtra",
       "state": "Maharashtra",
-      "price": 112.44
+      "price": 112.41
     },
     {
       "city": "Manipur",
@@ -3640,7 +3635,7 @@
     {
       "city": "Rajasthan",
       "state": "Rajasthan",
-      "price": 113.4
+      "price": 113.42
     },
     {
       "city": "Sikkim",
@@ -3676,6 +3671,11 @@
       "city": "West Bengal",
       "state": "West Bengal",
       "price": 113.82
+    },
+    {
+      "city": "Jharkhand",
+      "state": "Jharkhand",
+      "price": 106.07
     },
     {
       "city": "Bhubaneswar",
@@ -3787,7 +3787,7 @@
     {
       "city": "Ambedkarnagar",
       "state": "Uttar Pradesh",
-      "price": 96.43
+      "price": 96.57
     },
     {
       "city": "Amethi Csm Nagar",
@@ -4292,7 +4292,7 @@
     {
       "city": "Charaideo",
       "state": "Assam",
-      "price": 98.37
+      "price": 98.36
     },
     {
       "city": "Charki Dadri",
@@ -4757,7 +4757,7 @@
     {
       "city": "Garhwa",
       "state": "Jharkhand",
-      "price": 102.15
+      "price": 102.02
     },
     {
       "city": "Gariyaband",
@@ -4767,7 +4767,7 @@
     {
       "city": "Gautam Budh Nagar",
       "state": "Uttar Pradesh",
-      "price": 95.29
+      "price": 95.36
     },
     {
       "city": "Gaya",
@@ -4817,7 +4817,7 @@
     {
       "city": "Gonda",
       "state": "Uttar Pradesh",
-      "price": 95.81
+      "price": 95.62
     },
     {
       "city": "Gondia",
@@ -4827,7 +4827,7 @@
     {
       "city": "Gopalganj",
       "state": "Bihar",
-      "price": 100.57
+      "price": 100.5
     },
     {
       "city": "Gorakhpur",
@@ -5037,7 +5037,7 @@
     {
       "city": "Jalaun",
       "state": "Uttar Pradesh",
-      "price": 96.47
+      "price": 96.48
     },
     {
       "city": "Jalgaon",
@@ -5142,7 +5142,7 @@
     {
       "city": "Jhunjhunu",
       "state": "Rajasthan",
-      "price": 98.19
+      "price": 98.71
     },
     {
       "city": "Jind",
@@ -5177,7 +5177,7 @@
     {
       "city": "Kaimur",
       "state": "Bihar",
-      "price": 100.76
+      "price": 100.2
     },
     {
       "city": "Kaithal",
@@ -5602,7 +5602,7 @@
     {
       "city": "Longding",
       "state": "Arunachal Pradesh",
-      "price": 89.09
+      "price": 89.13
     },
     {
       "city": "Longleng",
@@ -5782,7 +5782,7 @@
     {
       "city": "Mehsana",
       "state": "Gujarat",
-      "price": 98.23
+      "price": 98.14
     },
     {
       "city": "Mewat",
@@ -6352,7 +6352,7 @@
     {
       "city": "Rampur",
       "state": "Uttar Pradesh",
-      "price": 95.71
+      "price": 95.95
     },
     {
       "city": "Ranchi",
@@ -6512,7 +6512,7 @@
     {
       "city": "Satara",
       "state": "Maharashtra",
-      "price": 99.64
+      "price": 98.53
     },
     {
       "city": "Satna",
@@ -6622,7 +6622,7 @@
     {
       "city": "Sibsagar",
       "state": "Assam",
-      "price": 98.36
+      "price": 98.37
     },
     {
       "city": "Siddipet",
@@ -6892,7 +6892,7 @@
     {
       "city": "Tirap",
       "state": "Arunachal Pradesh",
-      "price": 89.09
+      "price": 89.13
     },
     {
       "city": "Tirunelveli",
@@ -7197,7 +7197,7 @@
     {
       "city": "Arunachal Pradesh",
       "state": "Arunachal Pradesh",
-      "price": 88.8
+      "price": 88.81
     },
     {
       "city": "Assam",
@@ -7207,7 +7207,7 @@
     {
       "city": "Bihar",
       "state": "Bihar",
-      "price": 100.32
+      "price": 100.3
     },
     {
       "city": "Chhattisgarh",
@@ -7257,7 +7257,7 @@
     {
       "city": "Jharkhand",
       "state": "Jharkhand",
-      "price": 101.22
+      "price": 101.21
     },
     {
       "city": "Karnataka",
@@ -7277,7 +7277,7 @@
     {
       "city": "Maharashtra",
       "state": "Maharashtra",
-      "price": 99.09
+      "price": 99.06
     },
     {
       "city": "Manipur",
@@ -7317,7 +7317,7 @@
     {
       "city": "Rajasthan",
       "state": "Rajasthan",
-      "price": 98.48
+      "price": 98.5
     },
     {
       "city": "Sikkim",
