@@ -1,5 +1,5 @@
 {
-  "last_updated_ist": "2026-11-25T14:27:10.544317+05:30",
+  "last_updated_ist": "2026-11-26T14:13:13.305713+05:30",
   "source": "businesstoday.in",
   "petrol": [
     {
@@ -215,7 +215,7 @@
     {
       "city": "Baksa",
       "state": "Assam",
-      "price": 106.16
+      "price": 106.01
     },
     {
       "city": "Balaghat",
@@ -325,7 +325,7 @@
     {
       "city": "Barpeta",
       "state": "Assam",
-      "price": 106.16
+      "price": 106.01
     },
     {
       "city": "Bastar",
@@ -475,7 +475,7 @@
     {
       "city": "Biswanath",
       "state": "Assam",
-      "price": 106.16
+      "price": 106.01
     },
     {
       "city": "Bokaro",
@@ -1280,7 +1280,7 @@
     {
       "city": "Idukki",
       "state": "Kerala",
-      "price": 115.33
+      "price": 115.22
     },
     {
       "city": "Imphal",
@@ -1940,7 +1940,7 @@
     {
       "city": "Madhepura",
       "state": "Bihar",
-      "price": 114.5
+      "price": 114.32
     },
     {
       "city": "Madhubani",
@@ -2210,7 +2210,7 @@
     {
       "city": "Nagpur",
       "state": "Maharashtra",
-      "price": 111.8
+      "price": 111.72
     },
     {
       "city": "Nainital",
@@ -3525,17 +3525,12 @@
     {
       "city": "Assam",
       "state": "Assam",
-      "price": 106.13
+      "price": 106.12
     },
     {
       "city": "Bihar",
       "state": "Bihar",
-      "price": 114.36
-    },
-    {
-      "city": "Chhattisgarh",
-      "state": "Chhattisgarh",
-      "price": 108.99
+      "price": 114.35
     },
     {
       "city": "Dadra And Nagar Haveli",
@@ -3578,6 +3573,11 @@
       "price": 106.5
     },
     {
+      "city": "Jharkhand",
+      "state": "Jharkhand",
+      "price": 106.07
+    },
+    {
       "city": "Karnataka",
       "state": "Karnataka",
       "price": 111.29
@@ -3585,7 +3585,7 @@
     {
       "city": "Kerala",
       "state": "Kerala",
-      "price": 114.18
+      "price": 114.17
     },
     {
       "city": "Madhya Pradesh",
@@ -3673,9 +3673,9 @@
       "price": 113.82
     },
     {
-      "city": "Jharkhand",
-      "state": "Jharkhand",
-      "price": 106.07
+      "city": "Chhattisgarh",
+      "state": "Chhattisgarh",
+      "price": 108.99
     },
     {
       "city": "Bhubaneswar",
@@ -3912,7 +3912,7 @@
     {
       "city": "Baksa",
       "state": "Assam",
-      "price": 97.64
+      "price": 97.49
     },
     {
       "city": "Balaghat",
@@ -4977,7 +4977,7 @@
     {
       "city": "Idukki",
       "state": "Kerala",
-      "price": 104.06
+      "price": 103.92
     },
     {
       "city": "Imphal",
@@ -5327,7 +5327,7 @@
     {
       "city": "Katihar",
       "state": "Bihar",
-      "price": 100.43
+      "price": 100.26
     },
     {
       "city": "Katni",
@@ -5532,7 +5532,7 @@
     {
       "city": "Kurnool",
       "state": "Andhra Pradesh",
-      "price": 105.51
+      "price": 105.45
     },
     {
       "city": "Kurukshetra",
@@ -5602,7 +5602,7 @@
     {
       "city": "Longding",
       "state": "Arunachal Pradesh",
-      "price": 89.13
+      "price": 89.09
     },
     {
       "city": "Longleng",
@@ -5782,7 +5782,7 @@
     {
       "city": "Mehsana",
       "state": "Gujarat",
-      "price": 98.14
+      "price": 98.23
     },
     {
       "city": "Mewat",
@@ -5857,7 +5857,7 @@
     {
       "city": "Muzaffarnagar",
       "state": "Uttar Pradesh",
-      "price": 95.44
+      "price": 95.56
     },
     {
       "city": "Muzaffarpur",
@@ -6622,7 +6622,7 @@
     {
       "city": "Sibsagar",
       "state": "Assam",
-      "price": 98.37
+      "price": 98.36
     },
     {
       "city": "Siddipet",
@@ -6892,7 +6892,7 @@
     {
       "city": "Tirap",
       "state": "Arunachal Pradesh",
-      "price": 89.13
+      "price": 89.66
     },
     {
       "city": "Tirunelveli",
@@ -7197,12 +7197,12 @@
     {
       "city": "Arunachal Pradesh",
       "state": "Arunachal Pradesh",
-      "price": 88.81
+      "price": 88.84
     },
     {
       "city": "Assam",
       "state": "Assam",
-      "price": 97.67
+      "price": 97.66
     },
     {
       "city": "Bihar",
@@ -7267,7 +7267,7 @@
     {
       "city": "Kerala",
       "state": "Kerala",
-      "price": 103.26
+      "price": 103.25
     },
     {
       "city": "Madhya Pradesh",
